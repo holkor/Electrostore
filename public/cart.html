@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroStore - Корзина</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">⚡ ElectroStore</div>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="products.html">Товары</a>
+            <a href="cart.html">Корзина 🛒 <span id="cart-count">0</span></a>
+            <a href="profile.html">Профиль 👤</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Ваша корзина</h2>
+        <div class="cart-summary">
+            <span>Товаров в корзине: <strong id="cart-items-count">0</strong></span>
+            <span>Общая сумма: <strong id="cart-total">0 ₽</strong></span>
+        </div>
+        <div id="cart-items">
+            <p>Корзина пуста 🛒<br>
+            <small>Добавьте товары на странице "Товары"</small></p>
+        </div>
+    </div>
+
+    <script src="/js/cart.js"></script>
+</body>
+</html>

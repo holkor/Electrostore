@@ -1,0 +1,6 @@
+[
+  { "id": 1, "name": "iPhone 15", "price": 99999, "image": "📱", "description": "Флагман Apple" },
+  { "id": 2, "name": "Samsung Galaxy", "price": 89999, "image": "📱", "description": "Мощный Android" },
+  { "id": 3, "name": "AirPods Pro", "price": 34990, "image": "🎧", "description": "С шумоподавлением" },
+  { "id": 4, "name": "USB-C кабель", "price": 499, "image": "🔌", "description": "Надёжная зарядка" }
+]

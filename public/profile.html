@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroStore - Профиль</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">⚡ ElectroStore</div>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="products.html">Товары</a>
+            <a href="cart.html">Корзина 🛒 <span id="cart-count">0</span></a>
+            <a href="profile.html">Профиль 👤</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Профиль и авторизация</h2>
+        <p class="page-subtitle">Здесь можно зарегистрироваться, войти в аккаунт и проверить активную сессию.</p>
+
+        <div class="auth-layout">
+            <section class="panel">
+                <h3>Текущий пользователь</h3>
+                <div id="profile-status" class="profile-status">
+                    <p>Проверка сессии...</p>
+                </div>
+                <button id="logout-btn" class="btn-danger" type="button" disabled>Выйти</button>
+            </section>
+
+            <section class="panel">
+                <h3>Регистрация</h3>
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="register-name">Имя</label>
+                        <input id="register-name" name="name" type="text" placeholder="Введите ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input id="register-email" name="email" type="email" placeholder="example@mail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Пароль</label>
+                        <input id="register-password" name="password" type="password" placeholder="Минимум 6 символов" required minlength="6">
+                    </div>
+                    <button class="btn-success full-width" type="submit">Создать аккаунт</button>
+                </form>
+            </section>
+
+            <section class="panel">
+                <h3>Вход</h3>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input id="login-email" name="email" type="email" placeholder="example@mail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Пароль</label>
+                        <input id="login-password" name="password" type="password" placeholder="Введите пароль" required>
+                    </div>
+                    <button class="btn-primary full-width" type="submit">Войти</button>
+                </form>
+            </section>
+        </div>
+
+        <p id="auth-message" class="status-message" hidden></p>
+    </div>
+
+    <script src="/js/cart.js"></script>
+    <script src="/js/profile.js"></script>
+</body>
+</html>

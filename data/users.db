@@ -1,0 +1,6 @@
+{"id":"1778865243756","name":"????","email":"user1778865243621@example.com","passwordHash":"$2b$10$6b0URthB1sDIHl3e8joAHuNndZiMmghQCoyZN3Tv4qtAc2t.MHktq","createdAt":"2026-05-15T17:14:03.756Z","lastLogin":null,"_id":"OGxzTlbsXjDRHAYT"}
+{"id":"1778865217633","name":"????","email":"user1778865217506@example.com","passwordHash":"$2b$10$D3pgZ.KPnFHB29Iy4YEQFuosOC3Xf/uhoAMOe98Jt0KYqGih5q28.","createdAt":"2026-05-15T17:13:37.633Z","lastLogin":null,"_id":"ZCAfqOEFwP23nxdo"}
+{"id":"1778865187457","name":"???????? ???????????","email":"user1778865187169@example.com","passwordHash":"$2b$10$HwzCyspgbIUHzjie3ddv0e7HrWdSmMVXolscGrsjOkeXXysFwHtI2","createdAt":"2026-05-15T17:13:07.457Z","lastLogin":null,"_id":"bDmVrgHo4NyAi0Rs"}
+{"id":"1778865280045","name":"????","email":"user1778865279904@example.com","passwordHash":"$2b$10$hdq7EpeIjIaiy49VxQPvz.svuXK13x1aZ1MhxPQ.96HCMolRSIgjm","createdAt":"2026-05-15T17:14:40.045Z","lastLogin":null,"_id":"cNKDSQ9E4HdS7un7"}
+{"id":"1778865561587","name":"Дмитрий","email":"grizzly@gmail.com","passwordHash":"$2b$10$3D26a/glPd79jbcOgt0h/.7GUHDDcmyRKAN250TyvAwFS/SSUIDHy","createdAt":"2026-05-15T17:19:21.587Z","lastLogin":"2026-05-15T17:21:42.883Z","_id":"jOBHOAfQKChf6TSv"}
+{"$$indexCreated":{"fieldName":"email","unique":true,"sparse":false}}
