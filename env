@@ -1,8 +1,0 @@
-# Порт, на котором запускается сервер
-PORT=3000
-
-# Секрет для подписи сессионных cookie. Не публикуй этот файл!
-SESSION_SECRET=b3437539674ea7e3a06d39f2d77632e9bd82a9c8125e88fe66c183624edab45a646869e03c9f69c5de6c6f9b4d786aef
-
-# Окружение: development | production
-NODE_ENV=development
