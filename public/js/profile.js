@@ -1,3 +1,7 @@
+// public/js/profile.js
+// Регистрация, вход, выход, проверка текущей сессии.
+// Требует подключения global.js перед этим файлом.
+
 const statusBox = document.getElementById('profile-status');
 const messageBox = document.getElementById('auth-message');
 const logoutButton = document.getElementById('logout-btn');
@@ -5,19 +9,14 @@ const registerForm = document.getElementById('register-form');
 const loginForm = document.getElementById('login-form');
 
 function showMessage(text, isError = false) {
-  if (!messageBox) {
-    return;
-  }
-
+  if (!messageBox) return;
   messageBox.hidden = false;
   messageBox.textContent = text;
   messageBox.className = `status-message ${isError ? 'status-error' : 'status-success'}`;
 }
 
 function renderUser(user) {
-  if (!statusBox) {
-    return;
-  }
+  if (!statusBox) return;
 
   if (!user) {
     statusBox.innerHTML = `
@@ -25,40 +24,22 @@ function renderUser(user) {
       <p>Активная пользовательская сессия не найдена.</p>
       <p>После входа данные будут храниться в базе, а сессия сохранится через cookie.</p>
     `;
-    if (logoutButton) {
-      logoutButton.disabled = true;
-    }
+    if (logoutButton) logoutButton.disabled = true;
     return;
   }
 
   statusBox.innerHTML = `
     <p><strong>Статус:</strong> авторизован</p>
-    <p><strong>Имя:</strong> ${user.name}</p>
-    <p><strong>Email:</strong> ${user.email}</p>
+    <p><strong>Имя:</strong> ${escapeHtml(user.name)}</p>
+    <p><strong>Email:</strong> ${escapeHtml(user.email)}</p>
     <p>Сессия активна и привязана к cookie браузера.</p>
   `;
-  if (logoutButton) {
-    logoutButton.disabled = false;
-  }
-}
-
-async function requestJSON(url, options = {}) {
-  const response = await fetch(url, {
-    headers: { 'Content-Type': 'application/json' },
-    ...options
-  });
-
-  const data = await response.json();
-  if (!response.ok) {
-    throw new Error(data.error || `HTTP ${response.status}`);
-  }
-
-  return data;
+  if (logoutButton) logoutButton.disabled = false;
 }
 
 async function loadCurrentUser() {
   try {
-    const user = await requestJSON('/api/auth/me', { method: 'GET' });
+    const user = await checkAuth();
     renderUser(user);
   } catch (error) {
     renderUser(null);
@@ -68,7 +49,6 @@ async function loadCurrentUser() {
 
 async function handleRegister(event) {
   event.preventDefault();
-
   const formData = new FormData(registerForm);
   const payload = Object.fromEntries(formData.entries());
 
@@ -87,7 +67,6 @@ async function handleRegister(event) {
 
 async function handleLogin(event) {
   event.preventDefault();
-
   const formData = new FormData(loginForm);
   const payload = Object.fromEntries(formData.entries());
 
@@ -115,17 +94,8 @@ async function handleLogout() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (registerForm) {
-    registerForm.addEventListener('submit', handleRegister);
-  }
-
-  if (loginForm) {
-    loginForm.addEventListener('submit', handleLogin);
-  }
-
-  if (logoutButton) {
-    logoutButton.addEventListener('click', handleLogout);
-  }
-
+  if (registerForm) registerForm.addEventListener('submit', handleRegister);
+  if (loginForm) loginForm.addEventListener('submit', handleLogin);
+  if (logoutButton) logoutButton.addEventListener('click', handleLogout);
   loadCurrentUser();
 });
